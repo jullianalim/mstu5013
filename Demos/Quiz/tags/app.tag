@@ -11,9 +11,9 @@
 			{
 				question: "What's bigger, the earth or the sun?",
 				choices: [
-					"earth",
-					"sun",
-					"both the same"
+					{option: "earth"},
+					{option: "sun"},
+					{option: "both the same"}
 				],
 				youtubeID: "Ydfsifdls",
 				answer: "sun"
@@ -21,14 +21,16 @@
 			{
 				question: "Do you believe in God?",
 				choices: [
-					"yes",
-					"no",
-					"kind of..."
+					{option: "yeah"},
+					{option: "nah"},
+					{option: "idk"}
 				],
 				youtubeID: "ABDE3482",
 				answer: "kind of..."
 			}
 		];
+
+
 	</script>
 
 	<style>

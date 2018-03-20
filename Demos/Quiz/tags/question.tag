@@ -1,9 +1,7 @@
 <question>
 
 	<p>{ question }</p>
-	<h3>option 1</h3>
-	<h3>option 2</h3>
-	<h3>option 3</h3>
+	<h3 each={choices}> { option }</h3>
 
 	<script>
 		var that = this;
