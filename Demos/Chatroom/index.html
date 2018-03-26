@@ -30,6 +30,10 @@
 	  firebase.initializeApp(config);
 
 		// Global Cached -> Most useful Firebase refs accessible anywhere.
+		var database = firebase.database();
+		var messagesRef = database.ref('/messages');
+
+
 		// HERE
 
 		// Initialize Riot

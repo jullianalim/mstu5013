@@ -13,10 +13,24 @@
 	<script>
 		var that = this;
 
-		// Demonstration Data
+		// Demonstration Data - this will be replaced with database data
 		this.chatLog = [
-			{ message: "Hello" }, { message: "Hola" }, { message: "Konnichiwa" }
+			//{ message: "Hello" }, { message: "Hola" }, { message: "Konnichiwa" }
 		];
+
+//HERE - I need to fetch data from the database.
+//In here, I'll set charLog to the db data.
+
+		messagesRef.on('value', function(snapshot){
+			var data = snapshot.val();
+
+			that.chatLog = [];
+
+			for (key in data){
+				that.chatLog.push(data[key]);
+			}
+			that.update();
+		});
 
 		sendMsg(e) {
 			if (e.type == "keypress" && e.key !== "Enter") {
@@ -24,13 +38,16 @@
 				return false; // Short-circuits function (function exits here, does not continue.)
 			}
 
+			if (this.refs.messageInput.value !=="")
+			{
 			var msg = {
 				message: this.refs.messageInput.value
 			};
-			this.chatLog.push(msg);
+			messagesRef.push(msg);
 
 			this.clearInput();
 		}
+	}
 
 		clearInput(e) {
 			this.refs.messageInput.value = "";
